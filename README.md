@@ -9,3 +9,7 @@ Packages Used
  * ``GO.db``
  * ``annotate``
  * ``org.Hs.eg.db``
+
+Test Run
+--------
+``./run_go_test.R test_data/GENE_UNIVERSE.tab test_data/sample_genes.txt``
