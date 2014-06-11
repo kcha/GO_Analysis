@@ -22,7 +22,7 @@ Output:
   A tab-delimited file of enriched GO terms with statistics for each target file.
 
 Test run:
-  ./run_go_test.R test_data/1_GENE_UNIVERSE.tab test_data/subcluster_01.txt
+  ./run_go_test.R test_data/GENE_UNIVERSE.tab test_data/sample_genes.txt
 "
   writeLines(text, stderr())
 }
