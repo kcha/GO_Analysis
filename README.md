@@ -15,3 +15,5 @@ Test Run
 ```
 ./run_go_test.R test_data/GENE_UNIVERSE.tab test_data/sample_genes.txt
 ```
+
+See ``test_data/sample_genes.go_enrichment.tab`` for example of output.
