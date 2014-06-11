@@ -12,4 +12,6 @@ Packages Used
 
 Test Run
 --------
-``./run_go_test.R test_data/GENE_UNIVERSE.tab test_data/sample_genes.txt``
+```
+./run_go_test.R test_data/GENE_UNIVERSE.tab test_data/sample_genes.txt
+```
