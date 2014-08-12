@@ -40,7 +40,7 @@ if (args[1] %in% c("-h", "--help", "-help")) {
 }
 
 library(stringr)
-source("go_test_func.r")
+source("go_test_func.R")
 
 universe <- args[1]
 files <- args[2:length(args)]
