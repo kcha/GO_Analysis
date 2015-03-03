@@ -2,11 +2,7 @@
 #
 # Perform GO enrichment
 
-library(GOstats)
-library(GO.db)
-library(annotate)
-library(org.Hs.eg.db)
-
+#' @export
 load_genes <- function(file, db) {
     # Input is single column of gene symbols
     write(paste("// Testing", file), stderr())
@@ -15,6 +11,7 @@ load_genes <- function(file, db) {
     return(zzz)
 }
 
+#' @export
 load_universe <- function(file, db) {
     # Universe of genes
     #   Input is single column of gene symbols
@@ -23,10 +20,12 @@ load_universe <- function(file, db) {
     return(symbolsz)
 }
 
+#' @export
 load_alias2eg <- function() {
     return(toTable(org.Hs.egALIAS2EG))
 }
 
+#' @export
 go_test <- function(genes, universeGenes, ont = "BP") {
     params <- new("GOHyperGParams",
                   geneIds = genes,
@@ -42,6 +41,7 @@ go_test <- function(genes, universeGenes, ont = "BP") {
     return(hgOver)
 }
 
+#' @export
 get_sig_terms <- function(hgOver, filtered) {
     s <- summary(hgOver, pvalue=1)
     
@@ -57,6 +57,7 @@ get_sig_terms <- function(hgOver, filtered) {
     return(s2)
 }
 
+#' @export
 go_enrichment_2_table <- function(result) {
     # Convert significant hits to a table
     # Combine all three ontologies
@@ -75,6 +76,7 @@ go_enrichment_2_table <- function(result) {
     return(ALL)
 }
 
+#' @export
 write_results <- function(g, dir, inputfile) {
     tab <- go_enrichment_2_table(g)
     #output <- paste("go_enrichment", "tab", sep=".")
@@ -100,6 +102,7 @@ write_results <- function(g, dir, inputfile) {
     #}
 }
 
+#' @export
 run_go_test <- function(file, universe, db = NULL) {
     if (is.null(db))
         db <- load_alias2eg()
